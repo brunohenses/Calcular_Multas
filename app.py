@@ -36,3 +36,24 @@ def exibir_menu() -> None:
     print ("3 - Autoestrada")
     print ("4 - sair")
     print("=" * 50)
+
+def main() -> None:
+#   Função principal do programa:
+    while True:
+        exibir_menu()
+        opcao = input("Selecione o tipo de via (1-3) ou sair do programa (4): ").strip()
+
+        if opcao == '4':
+            print("\nObrigado por utilizar o sistema. até logo!")
+            break
+
+        try:
+            velocidade = float(input("Digite a velocidade do veículo (km/h): ").strip())
+            
+            if velocidade <= 0:
+                print("A Velocidade deve ser um valor positivo!")
+                continue
+        
+        except ValueError:
+            print("Erro: Por Favor, digite um valor numérico válido!")
+            continue
