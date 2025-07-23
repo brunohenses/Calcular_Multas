@@ -15,6 +15,16 @@ def calcular_multa_fora_localidade(velocidade: float) -> float:
         return 60.0
     else:
         return 120.0
+    
+def calcular_multa_autoestrada(velocidade: float) -> float:
+    if velocidade <= 120:
+        return 0.0
+    elif velocidade < 150:
+        return 60.0
+    elif velocidade < 175:
+        return 120.0
+    else:
+        return 360.0
 
 def exibir_menu() -> None:
 #    Exibe o Menu de Opções:
