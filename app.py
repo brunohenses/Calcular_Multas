@@ -1,3 +1,13 @@
+def calcular_multa_localidade(velocidade: float) -> float:
+    if velocidade <= 50:
+        return 0.0
+    elif velocidade < 90:
+        return 60.0
+    elif velocidade < 120:
+        return 120.0
+    else:
+        return 320.0
+
 def exibir_menu() -> None:
 #    Exibe o Menu de Opções:
     print("\n" + "=" * 50)
