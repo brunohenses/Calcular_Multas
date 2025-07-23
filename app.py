@@ -31,10 +31,10 @@ def exibir_menu() -> None:
     print("\n" + "=" * 50)
     print("CALCULADOR DE MULTAS POR EXCESSO DE VELOCIDADE")
     print("=" * 50)
-    print ("1 - Localidade")
-    print ("2 - Fora da Localidade")
-    print ("3 - Autoestrada")
-    print ("4 - sair")
+    print("1 - Localidade")
+    print("2 - Fora da Localidade")
+    print("3 - Autoestrada")
+    print("4 - sair")
     print("=" * 50)
 
 def main() -> None:
@@ -57,3 +57,30 @@ def main() -> None:
         except ValueError:
             print("Erro: Por Favor, digite um valor numérico válido!")
             continue
+
+        if opcao == '1':
+            multa = calcular_multa_localidade(velocidade)
+            tipo_via = "Localidade"
+        elif opcao == '2':
+            multa = calcular_multa_fora_localidade(velocidade)
+            tipo_via = "Fora da Localidade"
+        elif opcao == '3':
+            multa = calcular_multa_autoestrada(velocidade)
+            tipo_via = "Autoestrada"
+        else:
+            print("Opção inválida! Por favor, selecione uma opção válida.")
+            continue
+
+        print("\n" + "=" * 50)
+        print(f"Tipo de Via: {tipo_via}")
+        print(f"Velocidade registrada: {velocidade} km/h")
+        
+        if multa > 0:
+            print(f"VALOR DA MULTA: €{multa:.2f}")
+        else:
+            print("Nenhuma multa aplicada. Velocidade dentro do limite permitido.")
+        
+        print("=" * 50)
+
+if __name__ == "__main__":
+    main()
